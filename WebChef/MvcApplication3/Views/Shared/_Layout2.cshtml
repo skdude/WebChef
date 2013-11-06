@@ -1,48 +1,64 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
-        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-        <meta name="viewport" content="width=device-width" />
-        @Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
-    </head>
-    <body>
-        <header>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
-                </div>
-                <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
+<head>
+    <title>Title</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="@Url.Content("~/Content/reset.css")" type="text/css" media="screen">
+    <link rel="stylesheet" href="@Url.Content("~/Content/style.css")" type="text/css" media="screen">
+    <link rel="stylesheet" href="@Url.Content("~/Content/layout.css")" type="text/css" media="screen"> 
+    <link rel="stylesheet" href="@Url.Content("~/Content/Site.css")" type="text/css" media="screen"> 
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/cufon-yui.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/cufon-replace.js")" type="text/javascript"></script> 
+    <script src="@Url.Content("~/Scripts/Dynalight_400.font.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/FF-cash.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/tms-0.3.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/tms_presets.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.easing.1.3.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.equalheights.js")" type="text/javascript"></script>   
+</head>
+
+<body id="page1">
+	<!--==============================header=================================-->
+    <header>
+    	<div class="row-top">
+        	<div class="main">
+            	<div class="wrapper">
+                	<h1><img src="~/Images/logo.gif" height="60" width="70"/><a href="index.html">Webchef</a></h1>
                     <nav>
-                        <ul id="menu">
+                        <ul class="menu">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("About", "About")</li>
+                            <li>@Html.ActionLink("Recepten", "Recepten")</li>
+                            <li>@Html.ActionLink("Sterrengerechten", "Sterrengerechten")</li>
+                            <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
+                            <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
                         </ul>
                     </nav>
                 </div>
             </div>
-        </header>
-        <div id="body">
-            @RenderSection("featured", required: false)
-            <section class="content-wrapper main-content clear-fix">
+        </div>
+    </header>
+
+
+
+
+    <div id="body">
+            @RenderSection("content", required: false)
+            <section id="content">
                 @RenderBody()
             </section>
         </div>
-        <footer>
-            <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
-                </div>
-            </div>
-        </footer>
 
-        @Scripts.Render("~/bundles/jquery")
-        @RenderSection("scripts", required: false)
-    </body>
+
+
+    <footer>
+        <div class="main">
+        	<div class="aligncenter">
+            	<span>Tim Leenaers, Maarten Hoste, Stijn Kuppens &copy; 2013</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
 </html>

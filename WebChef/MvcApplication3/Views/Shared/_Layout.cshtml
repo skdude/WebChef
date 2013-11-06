@@ -38,7 +38,25 @@
                 </div>
             </div>
         </div>
+        
+        @{
+           string url = HttpContext.Current.Request.Url.AbsoluteUri;
+           string zichtbaar = "none";
+           if (!url.Equals("http://localhost:3234/")){
+                zichtbaar = "block";
+        }
+        }
+
+        
+        <div class="row-bot" style="display: @zichtbaar">
+        	<div class="row-bot-bg">
+            	<div class="main">
+                	<h2>Online recepten <span>voor iedereen</span></h2>
+                </div>
+            </div>
+        </div>
     </header>
+
 
 
 
