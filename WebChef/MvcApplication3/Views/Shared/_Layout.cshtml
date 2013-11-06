@@ -24,7 +24,7 @@
     	<div class="row-top">
         	<div class="main">
             	<div class="wrapper">
-                	<h1><img src="~/Images/logo.gif" height="60px" width="70px"/><a href="index.html">Webchef</a></h1>
+                	<h1><img src="~/Images/logo.gif" height="60" width="70"/><a href="~/Home/">Webchef</a></h1>
                     <nav>
                         <ul class="menu">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -42,7 +42,8 @@
         @{
            string url = HttpContext.Current.Request.Url.AbsoluteUri;
            string zichtbaar = "none";
-           if (!url.Equals("http://localhost:3234/")){
+           if (!url.Equals("http://localhost:3234/") && !url.Equals("http://localhost:3234/Home/"))
+           {
                 zichtbaar = "block";
         }
         }
